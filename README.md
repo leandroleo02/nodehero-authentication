@@ -1,4 +1,4 @@
-# nodehero-authentication
+# nodehero-authentication using mongo rather than redis
 
 1. `git clone git@github.com:RisingStack/nodehero-authentication.git`
 2. `cd nodehero-authentication`

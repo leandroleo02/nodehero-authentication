@@ -5,7 +5,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 const passport = require('passport')
 const session = require('express-session')
-const RedisStore = require('connect-redis')(session)
+const MongoStore = require('connect-mongo')(session);
 
 const config = require('../config')
 const app = express()
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 require('./authentication').init(app)
 
 app.use(session({
-  store: new RedisStore({
+  store: new MongoStore({
     url: config.redisStore.url
   }),
   secret: config.redisStore.secret,
